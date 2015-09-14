@@ -1,6 +1,6 @@
 #### Installing a Code Editor
 
-- Go to [Sublime Text](http://www.sublimetext.com/2)
+- Go to [Sublime Text](http://www.sublimetext.com/3)
 - Download the Windows Portable Version (Not 64bit)
 - Save/Move the Zip to your `U:` Drive
 - Extract all into your `U:` Drive
