@@ -1,0 +1,23 @@
+Begin
+  Output: "1. Math Homework"
+  Output: "2. Chem Homework"
+  Output: "3. Write Essay"
+  Output: "4. Exit!"
+  Input: option
+
+  while option != 4
+    if option == 1
+    	Output: "Not implemented yet :("
+    end if
+
+    if option == 2
+      Output: "Not implemented yet :("
+    end if
+
+    if option == 3
+    	Output: "Not implemented yet :("
+    end if
+  End while
+
+  Output: "Exiting!"
+End
