@@ -43,7 +43,7 @@ true // true
 false // false
 option==1 // ??
 
-//loop While Loop
+// While Loop
 while(condition){}
 
 while(option != 4){
