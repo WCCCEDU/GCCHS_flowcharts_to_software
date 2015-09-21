@@ -3,6 +3,7 @@
 - __User__ Can select a choice either Rock, Paper, or Scissors
 - __Computer__ will select at random Rock, Paper, or Scissors
 - __Computer__ will compare the choices and declare a winner
+- __Computer__ will declare a tie if computer and user select the same thing
 
 ##### Game Rules
 
