@@ -41,25 +41,45 @@ var option = prompt("CHOOSE!", 0);
 1==0 // false
 true // true
 false // false
+1 > 0 // true
+0 != 1 // true
 option==1 // ??
 
 // While Loop
 while(condition){}
 
+//While Loop that never executes
+while(false){
+  option = 2;
+}
+
+// declaration initialization
+var x = 1;
+
+// While loop that loops 9 times ^^ the var x = 1 is important here
+while(x < 10){
+  console.log("HEY YOU!");
+  // assignment
+  x = x + 1; // Increment so that this loop will eventually exit goes 1>2>3>4>5...10
+}
+
 while(option != 4){
+	// body of the loop
 
 	// condition
 	if(condition){}
 
 	if(option == 1){
+		// body of the if
+		
 		// call or invoke a function
 		printNotImplen();
 	}
 	if(option == 2){
-	  // body of the condition part between {}
+  	// body of the condition part between {}
 		printNotImplen();
 	}
-	
+
 	// more output
 	console.log("1. Math Homework");
 	console.log("2. Chem Homework");
