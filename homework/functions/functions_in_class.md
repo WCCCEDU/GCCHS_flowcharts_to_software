@@ -36,4 +36,4 @@
 ```javascript
 var array = ["It's", "necessary", "for", "the", "plan,", "Morty.", "Don't", "even", "trip,", "dawg."];
 ```
-Output should look like "dawg" "trip," "even"
+Output should look like __dawg trip, even__
