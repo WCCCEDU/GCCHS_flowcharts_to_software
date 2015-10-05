@@ -29,7 +29,7 @@
   
   var printArray = function(array){
     for(var i = 0; i < array.length; i++){
-      document.write("<span>" + array[count] + " </span>");
+      document.write("<span>" + array[i] + " </span>");
     }
   }
   
