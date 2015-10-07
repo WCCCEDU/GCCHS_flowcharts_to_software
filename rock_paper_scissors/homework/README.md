@@ -9,4 +9,9 @@ Complete the win conditions story by writing the rest of the program that declar
 
 You should output who won by either using `document.write` or `console.log`
 
-Look at line 19-26
+Lines 19-26 is your starting point.
+
+The win conditions are
+- Rock beats Scissors
+- Paper beats Rock
+- Scissors beats Paper
