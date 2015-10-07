@@ -7,4 +7,6 @@ Copy these files to your computer.
 ##### Assignment
 Complete the win conditions story by writing the rest of the program that declares a winner.
 
+You should output who won by either using `document.write` or `console.log`
+
 Look at line 19-26
