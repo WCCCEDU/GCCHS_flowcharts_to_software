@@ -14,12 +14,12 @@ document.write("<div>Computer Chose "+ computerChoice + "</div>");
 var playerSelection = prompt("1. Rock \n2. Paper \n3. Scissors", 1);
 var playerSelNum = parseInt(playerSelection);
 var playerChoice = choices[playerSelNum - 1];
-console.log("<div>Player Chose "+ playerChoice + "</div>");
+document.write("<div>Player Chose "+ playerChoice + "</div>");
 
 // Write the rest of the win conditions
 if(playerChoice == "Rock"){
 	if(computerChoice == "Paper"){
-		document.write("<div>Computer Won</div>"
+		document.write("<div>Computer Won</div>")
 	}
 }else if(playerChoice == "Paper"){
 	// More Conditions
