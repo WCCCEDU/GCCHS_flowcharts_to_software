@@ -8,7 +8,7 @@ Your Calculator should perform the 4 basic math operations
 
 
 ##### Sample Code from Class
-```
+```javascript
 // Calculator Program
 // 4 Operations addition, subtraction,
 // multiplication, and division
