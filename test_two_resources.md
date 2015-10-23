@@ -14,6 +14,14 @@ var thing = 1;
 var choice = 2;
 ```
 ##### Conditions
+```
+if(1 == 1){
+  console.log(true);
+}
+
+if (1 != i){
+  console.log(false);
+}
 ##### Functions
 ```
 var square = function(num){
