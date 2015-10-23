@@ -1,21 +1,30 @@
-##### Variables
+##### Memorize
 ```
-// variables
-var thing = 1;
-
-// MEMORIZE
 var identity = function(num){
-	return num;
+  return num;
 }
 
+// Calling or invoking
 identity(10); // ******************* Pay attention
+```
 
+##### Variables
+```
+var thing = 1;
+var choice = 2;
+```
+##### Conditions
+##### Functions
+```
 var square = function(num){
 	return identity(num) * identity(num);
 }
 
 square(2);
-
+```
+##### Scope
+Scopes are the part within {}
+```
 var nameIt = function(name){
 	var message = " is awesome";
 	return name + message;
@@ -24,18 +33,11 @@ var nameIt = function(name){
 nameIt("Scott");
 nameIt("Chase");
 
+// What is the output of the following statment. Does it have the same value as the value in the function above? (Hint: It doesn't)
 console.log(message);
-
-var choice = 2;
-
-// Condition
-if(choice == 1){
-	console.log(choice);
-}else{
-	console.log("no choice dummy");
-}
-
-// Loop
+```
+##### Loops
+```
 while(choice != 1){
 	choice = choice - 1;
 }
@@ -51,7 +53,3 @@ for(var i = 0; i < 10; i++){
 
 }
 ```
-##### Conditions
-##### Functions
-##### Scope
-##### Loops
