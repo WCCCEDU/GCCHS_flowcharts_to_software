@@ -22,6 +22,7 @@ if(1 == 1){
 if (1 != i){
   console.log(false);
 }
+```
 ##### Functions
 ```
 var square = function(num){
