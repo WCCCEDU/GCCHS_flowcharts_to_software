@@ -19,11 +19,13 @@ var start = 10;
 (start >= 1);
 (start > 0);
 
+// Answer 1
 // As a while loop
 while(start >= 1){
 	start = start - 1;
 }
 
+// Answer 2
 // As a for loop
 for(start; start > 0; start--){
 
@@ -51,6 +53,8 @@ while(start<20){
 
 // What is the value of "name" in the global scope
 console.log(name); // what is the output
+// Answer: name -> Sara
+// If and While bodies do not create closed scopes like functions do
 
 
 
@@ -61,9 +65,13 @@ var hey = function(){
 
 // What is the value of "name2" in the global scope
 console.log(name2); // what is the output
+// Answer: name2 -> undefined
+// Functions declare closed scopes. Outside the body of the function variables
+// are inaccessible
 
 hey();
 
 // What is the value of "name2" in the global scope
 console.log(name2); // what is the output
+// Answer: name2 -> undefined
 
