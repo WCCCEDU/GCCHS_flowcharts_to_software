@@ -29,9 +29,8 @@ var pushRight = function(object, intensity){
   object.style.left = currentLeft + intensity + "%";
 }
 
-var pushUp = function(object, intensity){
-  var currentTop = parseFloat(object.style.top);
-  object.style.top = currentTop - intensity + "%"
+var boxBounds = function(object){
+  return [object.offsetTop,]
 }
 
 // Event Handler
@@ -40,32 +39,68 @@ var whatKey = function(e){
   console.log(e.keyCode);
 }
 
+var colliiding = function(object1, object2){
+  var rect1 = object1.getBoundingClientRect()
+  var rect2 = object2.getBoundingClientRect()
+  var collides = !(rect1.right < rect2.left ||
+           rect1.left > rect2.right ||
+           rect1.bottom < rect2.top ||
+           rect1.top > rect2.bottom)
+  console.log(collides);
+  return collides;
+}
+
 var checkKey = function(e) {
   if(e.keyCode == '38'){
     pushUp(box, 1);
+    if(colliiding(box, box2)){
+      pushDown(box, 1);
+    }
   }
   else if(e.keyCode == '40'){
     pushDown(box, 1);
+    if(colliiding(box, box2)){
+      pushUp(box, 1);
+    }
   }
   else if(e.keyCode == '37'){
     pushLeft(box, 1);
+    if(colliiding(box, box2)){
+      pushRight(box, 1);
+    }
   }
   else if(e.keyCode == '39'){
     pushRight(box, 1);
+    if(colliiding(box, box2)){
+      pushLeft(box, 1);
+    }
   }
   else if(e.keyCode == '87'){
     pushUp(box2, 1);
+    if(colliiding(box2, box)){
+      pushDown(box2, 1);
+    }
   }
   else if(e.keyCode == '83'){
     pushDown(box2, 1);
+    if(colliiding(box2, box)){
+      pushUp(box2, 1);
+    }
   }
   else if(e.keyCode == '65'){
     pushLeft(box2, 1);
+    if(colliiding(box2, box)){
+      pushRight(box2, 1);
+    }
   }
   else if(e.keyCode == '68'){
     pushRight(box2, 1);
+    if(colliiding(box2, box)){
+      pushLeft(box2, 1);
+    }
   }
 }
+
 
 // Bind Event Handler
 // Binding to onkeydown
