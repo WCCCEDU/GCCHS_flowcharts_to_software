@@ -29,8 +29,9 @@ var pushRight = function(object, intensity){
   object.style.left = currentLeft + intensity + "%";
 }
 
-var boxBounds = function(object){
-  return [object.offsetTop,]
+var pushUp = function(object, intensity){
+  var currentTop = parseFloat(object.style.top);
+  object.style.top = currentTop - intensity + "%"
 }
 
 // Event Handler
