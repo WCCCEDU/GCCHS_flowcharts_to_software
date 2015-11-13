@@ -98,13 +98,13 @@ var expandHeight = function(box, intensity){
 	}
 }
 
-var startOver = function(object, intensity){
+/*var startOver = function(object, intensity){
 	var currentLocation = parseFloat(box.style.position);
 	var startPosition = parseFloat(box.style.left);
 	if(currentLocation > startPosition){
 		box.style.position = currentLocation - intensity + "%"
 	}
-}
+}*/
 
 
 // Event Handler
