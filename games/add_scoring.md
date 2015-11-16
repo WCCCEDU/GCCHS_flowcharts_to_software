@@ -1,4 +1,4 @@
-## Add Scoring
+## Add Scoring (10pts)
 
 You will need to setup a local version of the code at
 
