@@ -1,3 +1,11 @@
+var score = document.getElementsByClassName("score")[0]
+score.style.position = "absolute";
+score.style.fontSize = "5em";
+score.style.top = "0%";
+score.style.right = "5%";
+
+var scoreValue = 0;
+
 var player = document.getElementsByClassName("player")[0]
 player.style.position = "absolute";
 player.style.height = "5em";
@@ -106,7 +114,6 @@ var whatKey = function(e){
 	console.log(e.keyCode);
 }
 
-
 var colliding = function(object1, object2){
   var rect1 = object1.getBoundingClientRect()
   var rect2 = object2.getBoundingClientRect()
@@ -121,10 +128,17 @@ var colliding = function(object1, object2){
 var checkKey = function(e){
 	if (e.keyCode == '37'){
 		pushLeft(player, 2);
+    scoreValue -= 10;
 	}
 	else if (e.keyCode == '39'){
 		pushRight(player, 2);
+    scoreValue += 10;
 	}
+  updateScore();
+}
+
+var updateScore = function(){
+  score.innerHTML = scoreValue;
 }
 
 var animateObstacle = function(object, path, index){
@@ -137,6 +151,8 @@ var animateObstacle = function(object, path, index){
     }
     if(colliding(player, object)){
       player.style.left = "0%";
+      scoreValue -= 50;
+      updateScore();
     }
     index++
     if(index > path.length){
