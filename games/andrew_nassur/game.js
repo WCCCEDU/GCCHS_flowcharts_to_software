@@ -114,19 +114,12 @@ var colliding = function(object1, object2){
            rect1.left > rect2.right ||
            rect1.bottom < rect2.top ||
            rect1.top > rect2.bottom)
-  console.log(collides);
   return collides;
 }
 
 // Same as var checkKey = function(e)
-function checkKey(e){
-	if (e.keyCode == '38'){
-		pushUp(player, 0);
-	}
-	else if (e.keyCode == '40'){
-		pushDown(player, 0);
-	}
-	else if (e.keyCode == '37'){
+var checkKey = function(e){
+	if (e.keyCode == '37'){
 		pushLeft(player, 2);
 	}
 	else if (e.keyCode == '39'){
@@ -139,15 +132,11 @@ var animateObstacle = function(object, path, index){
     var direction = path[index];
     if(direction == 'u'){
       pushUp(object, 3.5);
-      if(colliding(player, object)){
-      	player.style.left = "0%";
-      }
     }else if(direction == 'd'){
       pushDown(object, 3.5);
-      if(colliding(player, object)){
-      	player.style.left = "0%";
-      }
     }
+    if(colliding(player, object)){
+      player.style.left = "0%";
     index++
     if(index > path.length){
       index = 0;
