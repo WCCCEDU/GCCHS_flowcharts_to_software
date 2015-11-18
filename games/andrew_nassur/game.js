@@ -137,6 +137,7 @@ var animateObstacle = function(object, path, index){
     }
     if(colliding(player, object)){
       player.style.left = "0%";
+    }
     index++
     if(index > path.length){
       index = 0;
