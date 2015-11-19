@@ -99,15 +99,6 @@ var expandHeight = function(box, intensity){
 	}
 }
 
-/*var startOver = function(object, intensity){
-	var currentLocation = parseFloat(box.style.position);
-	var startPosition = parseFloat(box.style.left);
-	if(currentLocation > startPosition){
-		box.style.position = currentLocation - intensity + "%"
-	}
-}*/
-
-
 // Event Handler
 // e => Event
 var whatKey = function(e){
@@ -141,6 +132,35 @@ var updateScore = function(){
   score.innerHTML = scoreValue;
 }
 
+var animateTopBottom = function(object, direction, accelStart, decelStart, accel, decel, position){
+  return setTimeout(function(){
+    var positionNum = parseFloat(position);
+    if(direction == 'u'){
+      if(positionNum > 1 && accel > 0){
+        pushUp(object, accel);
+        accel -= 0.5
+      }else{
+        accel = accelStart
+        direction = 'd'
+      }
+    }else{
+      if(positionNum < 84){
+        pushDown(object, decel);
+        decel += 0.05
+      }else{
+        decel = decelStart
+        direction = 'u'
+      }
+    }
+    if(colliding(player, object)){
+      player.style.left = "0%";
+      scoreValue -= 50;
+      updateScore();
+    }
+    return animateTopBottom(object, direction, accelStart, decelStart, accel, decel, object.style.top)
+  }, 10);
+}
+
 var animateObstacle = function(object, path, index){
   return setTimeout(function () {
     var direction = path[index];
@@ -165,6 +185,9 @@ var animateObstacle = function(object, path, index){
 // Bind Event Handler
 // Binding to onekeydown
 document.body.onkeydown = checkKey;
-animateObstacle(obstacle1, obstacle1Path, 0);
-animateObstacle(obstacle2, obstacle2Path, 0);
-animateObstacle(obstacle3, obstacle3Path, 0);
+//animateObstacle(obstacle1, obstacle1Path, 0);
+animateTopBottom(obstacle1, "u", 9, 0, 9, 0, "50%")
+animateTopBottom(obstacle2, "d", 20, 0, 5, 0, "70%")
+animateTopBottom(obstacle3, "u", 9, 0, 2, 0, "70%")
+//animateObstacle(obstacle2, obstacle2Path, 0);
+//animateObstacle(obstacle3, obstacle3Path, 0);
