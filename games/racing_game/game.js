@@ -10,7 +10,7 @@ var canvasBg = document.getElementById("canvasBg"),
     raceSpeed = 6,
     raceTrackSection = new RaceTrack(0,100),
     raceTrackSection2 = new RaceTrack(500, 100),
-    raceShip = new Ship(50, 300),
+    raceShip = new Ship(50, canvasHeight/2),
     requestAnimFrame =  window.requestAnimationFrame ||
                         window.webkitRequestAnimationFrame ||
                         window.mozRequestAnimationFrame ||
@@ -66,7 +66,7 @@ function Ship(x,y){
 }
 
 Ship.prototype.draw = function(){
-    ctxBg.drawImage(imgSprite, this.drawX, this.drawY, this.height, this.width);
+    ctxEntities.drawImage(imgSprite, this.drawX, this.drawY, this.height, this.width);
 }
 Ship.prototype.update = function(){
     if(this.isMovingLeft){
@@ -80,7 +80,7 @@ Ship.prototype.update = function(){
 function RaceTrack(x,y){
     this.drawX = x;
     this.drawY = y;
-    this.height = 400;
+    this.height = canvasHeight-200;
     this.width = 100;
     this.speed = raceSpeed;
     this.isAccelerating = false;
