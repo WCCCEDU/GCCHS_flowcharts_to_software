@@ -70,10 +70,10 @@ Ship.prototype.draw = function(){
 }
 Ship.prototype.update = function(){
     if(this.isMovingLeft){
-        this.drawY -= 5;
+        this.drawY -= raceTrackSection.currentSpeed()/3;
     }
     if(this.isMovingRight){
-        this.drawY += 5;
+        this.drawY += raceTrackSection.currentSpeed()/3;
     }
 }
 
